@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-from flask import Flask, escape, request
+from flask import Flask, request
+from werkzeug.utils import escape
 
 application = Flask(__name__)
 
