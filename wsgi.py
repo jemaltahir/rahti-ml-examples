@@ -1,17 +1,14 @@
 #!/usr/bin/env python3
 
-import flask
-import os
+from flask import Flask, escape, request
 
-application = flask.Flask(__name__)
+application = Flask(__name__)
 
 
-@application.route('/')
+@application.route("/")
 def hello():
-    name = flask.request.args.get("name", "World")
-    return {
-        'msg': 'Hello, {}!'.format(flask.escape(name))
-    }
+    name = request.args.get("name", "World")
+    return {"msg": "Hello, {}!".format(escape(name))}
 
 
 if __name__ == "__main__":
